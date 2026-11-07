@@ -1,0 +1,233 @@
+/* =====================================================
+   Lendwise styles
+   Colours come from the report. Change them here once
+   and the whole system updates.
+   ===================================================== */
+:root {
+    --navy: #1E3A5F;          /* headings, buttons, logo */
+    --blue: #3B82F6;          /* links, selected items */
+    --bg: #F8FAFC;            /* page background */
+    --white: #FFFFFF;         /* cards */
+    --border: #E2E8F0;
+    --text: #334155;
+    --muted: #64748B;
+    --sidebar-width: 250px;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: var(--sidebar-width);
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 1030;
+}
+.brand { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.5rem; }
+.brand-icon {
+    width: 38px; height: 38px;
+    background: var(--navy); color: #fff;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+}
+.brand-name { display: block; font-weight: 600; color: var(--navy); font-size: 1.05rem; line-height: 1.1; }
+.brand-sub  { display: block; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.05em; }
+
+.nav-title { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; margin: 0 0.5rem 0.5rem; }
+
+.nav-item-link {
+    display: flex; align-items: center; gap: 0.7rem;
+    padding: 0.55rem 0.75rem;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 0.85rem;
+}
+.nav-item-link:hover { background: var(--bg); text-decoration: none; }
+.nav-item-link.active { background: #E8F0FE; color: var(--blue); font-weight: 500; }
+.nav-item-link i { font-size: 1rem; }
+.nav-divider { border-color: var(--border); margin: 1rem 0; opacity: 1; }
+
+.nav-count {
+    margin-left: auto;
+    font-size: 0.7rem; font-weight: 600;
+    padding: 1px 8px; border-radius: 999px;
+}
+.count-red   { background: #FEE2E2; color: #B91C1C; }
+.count-amber { background: #FEF3C7; color: #92400E; }
+
+.sidebar-note {
+    margin-top: auto;
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-size: 0.75rem; color: var(--muted);
+    display: flex; gap: 0.5rem;
+}
+
+/* ---------- Main area and top bar ---------- */
+.main-area { margin-left: var(--sidebar-width); min-height: 100vh; display: flex; flex-direction: column; }
+
+.topbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1.75rem;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.breadcrumb-line { font-size: 0.8rem; color: var(--muted); }
+.breadcrumb-line strong { color: var(--navy); font-weight: 500; }
+.topbar-date { font-size: 0.8rem; color: var(--muted); }
+
+.bell-link { position: relative; color: var(--muted); font-size: 1.1rem; }
+.bell-dot {
+    position: absolute; top: 0; right: -2px;
+    width: 8px; height: 8px; background: #EF4444; border-radius: 50%;
+}
+.user-box { display: flex; align-items: center; gap: 0.6rem; padding-left: 1rem; border-left: 1px solid var(--border); }
+.avatar {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: #E8F0FE; color: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 600;
+}
+.user-name { display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); line-height: 1.1; }
+.user-role { display: block; font-size: 0.7rem; color: var(--muted); }
+
+.content { padding: 1.75rem; flex: 1; }
+.page-footer {
+    padding: 1rem 1.75rem;
+    font-size: 0.72rem; color: var(--muted);
+    display: flex; justify-content: space-between;
+}
+
+/* ---------- Page heading ---------- */
+.page-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; gap: 1rem; flex-wrap: wrap; }
+.page-title { font-size: 1.75rem; font-weight: 300; color: var(--navy); margin: 0; }
+.page-sub { color: var(--muted); font-size: 0.85rem; margin: 0.2rem 0 0; }
+
+/* ---------- Buttons ---------- */
+.btn-navy {
+    background: var(--navy); color: #fff; border: 1px solid var(--navy);
+    font-weight: 500; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: 8px;
+}
+.btn-navy:hover { background: #162d4a; color: #fff; text-decoration: none; }
+.btn-soft {
+    background: var(--white); color: var(--text); border: 1px solid var(--border);
+    font-size: 0.82rem; padding: 0.45rem 0.9rem; border-radius: 8px;
+}
+.btn-soft:hover { background: var(--bg); color: var(--navy); text-decoration: none; }
+
+/* ---------- Cards ---------- */
+.card-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    height: 100%;
+}
+.card-title-text { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin: 0; }
+.card-sub { font-size: 0.75rem; color: var(--muted); margin: 0.15rem 0 0.9rem; }
+
+/* Stat cards (the four numbers at the top) */
+.stat-label { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); }
+.stat-number { font-size: 2.1rem; font-weight: 300; color: var(--navy); line-height: 1.2; margin: 0.4rem 0 0.2rem; }
+.stat-note { font-size: 0.75rem; color: var(--muted); }
+.stat-note.red { color: #B91C1C; }
+.stat-link { color: inherit; text-decoration: none; display: block; height: 100%; }
+.stat-link:hover { text-decoration: none; }
+
+/* ---------- Tables ---------- */
+.simple-table { width: 100%; font-size: 0.82rem; }
+.simple-table th {
+    background: var(--bg); color: var(--muted);
+    font-size: 0.72rem; font-weight: 500;
+    padding: 0.6rem 0.75rem; text-align: left;
+}
+.simple-table td { padding: 0.75rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.simple-table tr:last-child td { border-bottom: none; }
+.row-title { font-weight: 600; color: var(--navy); display: block; }
+.row-sub { font-size: 0.72rem; color: var(--muted); }
+
+/* ---------- Status badges (colour + text, as in the report) ---------- */
+.status-badge {
+    display: inline-block; font-size: 0.72rem; font-weight: 500;
+    padding: 2px 10px; border-radius: 999px; white-space: nowrap;
+}
+.badge-green { background: #DCFCE7; color: #166534; }   /* Available, Returned, Approved */
+.badge-blue  { background: #DBEAFE; color: #1D4ED8; }   /* Active, Borrowed */
+.badge-amber { background: #FEF3C7; color: #92400E; }   /* Due soon, Pending */
+.badge-red   { background: #FEE2E2; color: #B91C1C; }   /* Overdue, Rejected */
+.badge-gray  { background: #F1F5F9; color: #475569; }   /* Inactive */
+
+/* ---------- Info boxes ---------- */
+.info-box { border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.8rem; margin-top: 1rem; }
+.info-box strong { display: block; }
+.info-warning { background: #FEF9E7; color: #92400E; border: 1px solid #FDE68A; }
+.info-danger  { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+.info-blue    { background: #EFF6FF; color: #1D4ED8; border: 1px solid #DBEAFE; }
+
+/* Key / value lines inside side cards */
+.kv { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 0.3rem 0; }
+.kv span:first-child { color: var(--muted); }
+.kv span:last-child { font-weight: 500; color: var(--navy); }
+
+.quick-btn { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+/* ---------- Login page ---------- */
+.login-wrap { min-height: 100vh; display: flex; }
+.login-left {
+    flex: 1; background: var(--navy); color: #fff;
+    padding: 3rem; display: flex; flex-direction: column;
+}
+.login-left .brand-name { color: #fff; font-size: 1.2rem; }
+.login-tag { font-size: 0.65rem; letter-spacing: 0.1em; margin-top: 4rem; color: #94A3B8; }
+.login-heading { font-size: 2.2rem; font-weight: 500; line-height: 1.2; margin: 0.8rem 0; }
+.login-text { color: #94A3B8; max-width: 380px; }
+.books { display: flex; align-items: flex-end; gap: 10px; margin-top: 3rem; height: 110px; }
+.books span { width: 36px; border-radius: 4px 4px 0 0; display: block; }
+.login-foot { margin-top: auto; font-size: 0.72rem; color: #94A3B8; }
+
+.login-right { flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem; background: var(--white); }
+.login-form-box { width: 100%; max-width: 380px; }
+.portal-pill {
+    display: inline-block; background: #EFF6FF; color: var(--blue);
+    font-size: 0.62rem; font-weight: 600; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.05em;
+}
+.login-title { font-size: 1.7rem; font-weight: 300; color: var(--navy); margin: 0.8rem 0 0.2rem; }
+.form-label { font-size: 0.75rem; font-weight: 600; color: var(--navy); }
+.form-control, .form-select { font-size: 0.85rem; border-color: var(--border); padding: 0.6rem 0.75rem; }
+.form-control:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+.password-wrap { position: relative; }
+.password-wrap button {
+    position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+    border: none; background: none; color: var(--muted);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 991px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.2s; }
+    .sidebar.open { transform: translateX(0); box-shadow: 0 0 30px rgba(0,0,0,0.15); }
+    .main-area { margin-left: 0; }
+    .login-left { display: none; }
+}
+
+/* ---------- Notification items ---------- */
+.note-item { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+.note-item:last-child { border-bottom: none; }
+.note-item.unread { border-left: 3px solid var(--blue); padding-left: 0.75rem; }
+.note-title { font-weight: 600; color: var(--navy); margin-top: 0.25rem; }
