@@ -71,7 +71,8 @@
             </p>
             <hr>
             <p class="text-center mb-1" style="font-size:0.8rem"><strong>Need a library account?</strong></p>
-            <p class="text-center text-muted" style="font-size:0.75rem">Contact library staff to register or restore access.</p>
+            <p class="text-center mb-1" style="font-size:0.8rem"><a href="<?= e(route('signup')) ?>">Create a borrower account</a></p>
+            <p class="text-center text-muted" style="font-size:0.75rem">Staff and admin accounts are created by library staff.</p>
             <p class="text-center text-muted mt-4" style="font-size:0.7rem">© <?= date('Y') ?> <?= APP_NAME ?> · Library services</p>
         </div>
     </div>

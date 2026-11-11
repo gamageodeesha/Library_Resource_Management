@@ -17,6 +17,7 @@ require_once __DIR__ . '/core/bootstrap.php';
 $routes = [
     // Everybody
     'login'               => ['AuthController',         'login'],
+    'signup'              => ['AuthController',         'signup'],
     'logout'              => ['AuthController',         'logout'],
     'setup'               => ['AuthController',         'setup'],
     'profile'             => ['ProfileController',      'index'],
